@@ -22,6 +22,9 @@ export default class FinanceAmortization extends Component {
     }
 
     updateValue(key, value) {
+        if (typeof value === 'object') {
+            value = value.target.value;
+        }
         const object = { [key]: value };
 
         if (typeof this.props.onUpdate !== 'undefined') {
@@ -62,37 +65,65 @@ export default class FinanceAmortization extends Component {
         return (
             <Fragment>
                 <div className="sbb-twoplustwo-amortization-controls">
-                    <TextControl
-                        label={__('Principal')}
-                        value={principal}
-                        onChange={this.updateValue.bind(null, 'principal')}
-                    />
-                    <TextControl
-                        label={__('Interest Rate')}
-                        value={rate}
-                        onChange={this.updateValue.bind(null, 'rate')}
-                    />
-                    <TextControl
-                        label={__('Number of Payments')}
-                        value={number_of_payments}
-                        onChange={this.updateValue.bind(null, 'number_of_payments')}
-                    />
-                    <SelectControl
-                        label={__('Interval')}
-                        value={interval}
-                        options={[
-                            { label: __('Years'), value: 0 },
-                            { label: __('Months'), value: 1 },
-                        ]}
-                        onChange={this.updateValue.bind(null, 'interval')}
-                    />
+
+                    <div className="form-group row">
+                        <label for="principal" class="col-sm-4 col-form-label">{__('Principal')}</label>
+                        <div className="input-group col-sm-8">
+                            <input
+                                id="principal"
+                                type="text"
+                                className="form-control"
+                                value={principal}
+                                onChange={this.updateValue.bind(null, 'principal')}
+                            />
+                            <div className="input-group-append">
+                                <span className="input-group-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-group row">
+                        <label for="loanterm" class="col-sm-4 col-form-label">{__('Loan Term')}</label>
+                        <div className="col-sm-8 d-flex">
+                            <TextControl
+                                id="loanterm"
+                                value={number_of_payments}
+                                onChange={this.updateValue.bind(null, 'number_of_payments')}
+                            />
+                            <SelectControl
+                                className="d-flex align-items-stretch"
+                                id="interval"
+                                value={interval}
+                                options={[
+                                    { label: __('Years'), value: 0 },
+                                    { label: __('Months'), value: 1 },
+                                ]}
+                                onChange={this.updateValue.bind(null, 'interval')}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="form-group row">
+                        <label for="rate" class="col-sm-4 col-form-label">{__('Interest Rate')}</label>
+                        <div className="input-group col-sm-8">
+                            <input
+                                id="rate"
+                                type="text"
+                                className="form-control"
+                                value={rate}
+                                onChange={this.updateValue.bind(null, 'rate')}
+                            />
+                            <div className="input-group-append">
+                                <span className="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="sbb-twoplustwo-amortization-actions">
+                <div className="sbb-twoplustwo-amortization-actions mb-3">
                     <Button
-                        isPrimary
-                        onClick={this.calculateResult}
-                    >
+                        className="btn btn-primary"
+                        onClick={this.calculateResult}>
                         {__('Calculate')}
                     </Button>
                 </div>

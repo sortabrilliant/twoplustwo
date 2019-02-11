@@ -4,8 +4,31 @@
  * CSS for both Frontend+Backend.
  */
 
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/input-group";
+
 .wp-block-sbb-twoplustwo-amortization  {
+    .components-base-control__field {
+        height: 100%;
+        margin: 0;
+        margin-right: 1rem;
+
+    }
+
     .components-select-control__input {
         appearance: menulist;
+    }
+
+    input,
+    input.components-text-control__input,
+    select.components-select-control__input {
+        margin: 0;
+        height: 100%;
     }
 }
