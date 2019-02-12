@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import FinanceCAGR from './component';
 
 $(function () {
-    document.querySelectorAll('.wp-block-sbb-twoplustwo-compound-annual-growth-rate')
+    document.querySelectorAll('.wp-block-sbb-twoplustwo-compound-interest')
         .forEach((domContainer, index) => {
             const renderElement = document.createElement('div');
-            renderElement.id = `sbb-twoplustwo-compound-annual-growth-rate-${index}`;
+            renderElement.id = `sbb-twoplustwo-compound-interest-${index}`;
             domContainer.prepend(renderElement);
 
             console.log(domContainer);

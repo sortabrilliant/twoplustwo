@@ -72,7 +72,7 @@ export default class FinanceAmortization extends Component {
                             <input
                                 id="principal"
                                 type="text"
-                                className="form-control"
+                                className="components-text-control__input"
                                 value={principal}
                                 onChange={this.updateValue.bind(null, 'principal')}
                             />
@@ -109,7 +109,7 @@ export default class FinanceAmortization extends Component {
                             <input
                                 id="rate"
                                 type="text"
-                                className="form-control"
+                                className="components-text-control__input"
                                 value={rate}
                                 onChange={this.updateValue.bind(null, 'rate')}
                             />

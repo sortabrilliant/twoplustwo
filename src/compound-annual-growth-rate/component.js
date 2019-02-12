@@ -59,34 +59,61 @@ export default class FinanceCAGR extends Component {
         const { beginningValue, endingValue, numberOfPeriods, result } = this.state;
         return (
             <Fragment>
-                <div className="sbb-twoplustwo-amortization-controls">
-                    <TextControl
-                        label={__('Beginning Value')}
-                        value={beginningValue}
-                        onChange={this.updateValue.bind(null, 'beginningValue')}
-                    />
-                    <TextControl
-                        label={__('Ending Value')}
-                        value={endingValue}
-                        onChange={this.updateValue.bind(null, 'endingValue')}
-                    />
-                    <TextControl
-                        label={__('Number of Periods')}
-                        value={numberOfPeriods}
-                        onChange={this.updateValue.bind(null, 'numberOfPeriods')}
-                    />
+                <div className="sbb-twoplustwo-compound-annual-growth-rate-controls">
+
+                    <div className="form-group row">
+                        <label for="beginningValue" class="col-sm-4 col-form-label">{__('Beginning Value')}</label>
+                        <div className="input-group col-sm-8">
+                            <input
+                                id="beginningValue"
+                                type="text"
+                                className="components-text-control__input"
+                                value={beginningValue}
+                                onChange={this.updateValue.bind(null, 'beginningValue')}
+                            />
+                            <div className="input-group-append">
+                                <span className="input-group-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-group row">
+                        <label for="endingValue" class="col-sm-4 col-form-label">{__('Ending Value')}</label>
+                        <div className="input-group col-sm-8">
+                            <input
+                                id="endingValue"
+                                type="text"
+                                className="components-text-control__input"
+                                value={endingValue}
+                                onChange={this.updateValue.bind(null, 'endingValue')}
+                            />
+                            <div className="input-group-append">
+                                <span className="input-group-text">$</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-group row">
+                        <label for="numberOfPeriods" className="col-sm-4 col-form-label">{__('Number of Periods')}</label>
+                        <div className="input-group col-sm-8">
+                            <TextControl
+                                id="numberOfPeriods"
+                                value={numberOfPeriods}
+                                onChange={this.updateValue.bind(null, 'numberOfPeriods')}
+                            />
+                        </div>
+                    </div>
                 </div>
 
-                <div className="sbb-twoplustwo-amortization-actions">
+                <div className="sbb-twoplustwo-compound-annual-growth-rate-actions mb-3">
                     <Button
-                        isPrimary
-                        onClick={this.calculateResult}
-                    >
+                        className="btn btn-primary"
+                        onClick={this.calculateResult}>
                         {__('Calculate')}
                     </Button>
                 </div>
 
-                {result && <p className="sbb-twoplustwo-amortization-result">{result}</p>}
+                {result && <p className="sbb-twoplustwo-compound-annual-growth-rate-result">{result}</p>}
             </Fragment>
         );
     }

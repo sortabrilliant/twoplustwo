@@ -9,7 +9,6 @@ $(function () {
             renderElement.id = `sbb-twoplustwo-compound-annual-growth-rate-${index}`;
             domContainer.prepend(renderElement);
 
-            console.log(domContainer);
             const defaultBeginningValue = parseFloat(domContainer.dataset.beginningValue) || 10000.00;
             const defaultEndingValue = parseFloat(domContainer.dataset.endingValue) || 19500.00;
             const defaultNumberOfPeriods = parseInt(domContainer.dataset.numberOfPeriods) || 3;
