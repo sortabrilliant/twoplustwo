@@ -32,6 +32,10 @@
         appearance: menulist;
     }
 
+    .btn {
+        font-family: sans-serif;
+    }
+
     .btn-primary:active,
     .btn-primary:focus {
         background-color: $primary;

@@ -4474,6 +4474,9 @@ input[type="button"].btn-block {
      -moz-appearance: menulist;
           appearance: menulist; }
 
+.wp-block-sbb-twoplustwo-amortization .btn {
+  font-family: sans-serif; }
+
 .wp-block-sbb-twoplustwo-amortization .btn-primary:active,
 .wp-block-sbb-twoplustwo-amortization .btn-primary:focus {
   background-color: #007bff; }
@@ -8904,6 +8907,9 @@ input[type="button"].btn-block {
 .wp-block-sbb-twoplustwo-compound-annual-growth-rate .form-group {
   font-size: 16px; }
 
+.wp-block-sbb-twoplustwo-compound-annual-growth-rate .btn {
+  font-family: sans-serif; }
+
 .wp-block-sbb-twoplustwo-compound-annual-growth-rate .btn-primary:active,
 .wp-block-sbb-twoplustwo-compound-annual-growth-rate .btn-primary:focus {
   background-color: #007bff; }
@@ -13333,6 +13339,9 @@ input[type="button"].btn-block {
 .wp-block-sbb-twoplustwo-compound-interest .components-text-control__input,
 .wp-block-sbb-twoplustwo-compound-interest .form-group {
   font-size: 16px; }
+
+.wp-block-sbb-twoplustwo-compound-interest .btn {
+  font-family: sans-serif; }
 
 .wp-block-sbb-twoplustwo-compound-interest .btn-primary:active,
 .wp-block-sbb-twoplustwo-compound-interest .btn-primary:focus {
