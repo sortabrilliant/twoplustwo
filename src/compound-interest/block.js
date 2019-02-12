@@ -18,7 +18,7 @@ registerBlockType('sbb/twoplustwo-compound-interest', {
 	title: __('Compound Interest (CI)'),
 
 	icon: 'shield',
-	category: 'finance',
+	category: 'financial_calculators',
 
 	keywords: [
 		__('compound interest'),

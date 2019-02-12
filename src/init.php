@@ -80,8 +80,8 @@ function twoplustwo_sbb_block_categories( $categories ) {
 		$categories,
 		array(
 			array(
-				'slug'  => 'finance',
-				'title' => __( 'Finance', 'twoplustwo' ),
+				'slug'  => 'financial_calculators',
+				'title' => __( 'Finance Calculators', 'twoplustwo' ),
 				'icon'  => 'wordpress',
 			),
 		)

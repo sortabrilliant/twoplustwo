@@ -18,7 +18,7 @@ registerBlockType('sbb/twoplustwo-amortization', {
 	title: __('Amortization'),
 
 	icon: 'shield',
-	category: 'finance',
+	category: 'financial_calculators',
 
 	keywords: [
 		__('amortization'),

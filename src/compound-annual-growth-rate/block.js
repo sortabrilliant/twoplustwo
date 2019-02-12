@@ -18,7 +18,7 @@ registerBlockType('sbb/twoplustwo-compound-annual-growth-rate', {
 	title: __('Compound Annual Growth Rate (CAGR)'),
 
 	icon: 'shield',
-	category: 'finance',
+	category: 'financial_calculators',
 
 	keywords: [
 		__('compound annual growth rate'),
