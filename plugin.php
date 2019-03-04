@@ -17,6 +17,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define( 'TWOPLUSTWO_VERSION', '1.0.0' );
+define( 'TWOPLUSTWO_PLUGIN_DIR', dirname( __FILE__ ) );
+define( 'TWOPLUSTWO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * Block Initializer.
  */
