@@ -13,9 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function setup() {
+function setup( $metadata_url, $full_path, $slug = '' ) {
 	add_action( 'rest_api_init', __NAMESPACE__ . '\\add_routes' );
 	add_action( 'admin_footer', __NAMESPACE__ . '\\localize_script' );
+
+	if ( get_option( 'sortabrilliant_updater' ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
+		$updater = \Puc_v4_Factory::buildUpdateChecker( $metadata_url, $full_path, $slug );
+		$updater->getVcsApi()->enableReleaseAssets();
+	}
 }
 
 function add_routes() {

@@ -91,6 +91,10 @@ add_filter( 'block_categories', 'twoplustwo_sbb_block_categories' );
 
 function twoplustwo_sbb_updater() {
 	require_once TWOPLUSTWO_PLUGIN_DIR . '/src/updater/updater.php';
-	\SortaBrilliant\Updater\setup();
+	\SortaBrilliant\Updater\setup(
+		'https://github.com/sortabrilliant/twoplustwo',
+		TWOPLUSTWO_PLUGIN_DIR . '/plugin.php',
+		'twoplustwo'
+	);
 }
 add_action( 'init', 'twoplustwo_sbb_updater' );
