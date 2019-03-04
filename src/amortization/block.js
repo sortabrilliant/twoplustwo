@@ -10,7 +10,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls } = wp.editor;
 
-import UpdatesPanel from '../UpdatesPanel';
+import UpdatesPanel from '../updater/UpdatesPanel';
 import FinanceAmortization from './component';
 
 const el = wp.element.createElement;

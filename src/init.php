@@ -90,7 +90,7 @@ function twoplustwo_sbb_block_categories( $categories ) {
 add_filter( 'block_categories', 'twoplustwo_sbb_block_categories' );
 
 function twoplustwo_sbb_updater() {
-	require_once TWOPLUSTWO_PLUGIN_DIR . '/src/updater.php';
+	require_once TWOPLUSTWO_PLUGIN_DIR . '/src/updater/updater.php';
 	\SortaBrilliant\Updater\setup();
 }
 add_action( 'init', 'twoplustwo_sbb_updater' );
