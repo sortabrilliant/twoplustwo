@@ -8,7 +8,9 @@ import './editor.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { InspectorControls } = wp.editor;
 
+import UpdatesPanel from '../UpdatesPanel';
 import FinanceAmortization from './component';
 
 const el = wp.element.createElement;
@@ -77,6 +79,9 @@ registerBlockType('sbb/twoplustwo-amortization', {
 
 		return (
 			<div className={className}>
+				<InspectorControls>
+					<UpdatesPanel />
+				</InspectorControls>
 				<FinanceAmortization
 					principal={parseFloat(attributes.principal)}
 					rate={parseFloat(attributes.rate)}

@@ -8,7 +8,9 @@ import './editor.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { InspectorControls } = wp.editor;
 
+import UpdatesPanel from '../UpdatesPanel';
 import FinanceCAGR from './component';
 
 const el = wp.element.createElement;
@@ -68,6 +70,9 @@ registerBlockType('sbb/twoplustwo-compound-annual-growth-rate', {
 
 		return (
 			<div className={className}>
+				<InspectorControls>
+					<UpdatesPanel />
+				</InspectorControls>
 				<FinanceCAGR
 					beginningValue={parseFloat(attributes.beginningValue)}
 					endingValue={parseFloat(attributes.endingValue)}

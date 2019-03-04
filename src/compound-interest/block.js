@@ -8,7 +8,9 @@ import './editor.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { InspectorControls } = wp.editor;
 
+import UpdatesPanel from '../UpdatesPanel';
 import FinanceCI from './component';
 
 const el = wp.element.createElement;
@@ -78,6 +80,9 @@ registerBlockType('sbb/twoplustwo-compound-interest', {
 
 		return (
 			<div className={className}>
+				<InspectorControls>
+					<UpdatesPanel />
+				</InspectorControls>
 				<FinanceCI
 					rate={parseFloat(attributes.rate)}
 					compoundingsPerPeriod={parseFloat(attributes.compoundingsPerPeriod)}
