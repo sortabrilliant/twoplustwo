@@ -55,7 +55,7 @@ function twoplustwo_sbb_editor_assets() { // phpcs:ignore
 	wp_enqueue_script(
 		'twoplustwo-sbb-block-js',
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components' ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components', 'wp-data' ),
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
 		true
 	);
@@ -88,3 +88,9 @@ function twoplustwo_sbb_block_categories( $categories ) {
 	);
 }
 add_filter( 'block_categories', 'twoplustwo_sbb_block_categories' );
+
+function twoplustwo_sbb_updater() {
+	require_once TWOPLUSTWO_PLUGIN_DIR . '/src/updater.php';
+	\SortaBrilliant\Updater\setup();
+}
+add_action( 'init', 'twoplustwo_sbb_updater' );
