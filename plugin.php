@@ -1,8 +1,8 @@
 <?php
-/**
+ /**
  * Plugin Name: Two + Two
  * Plugin URI: https://github.com/sortabrilliant/twoplustwo/
- * Description: Finance calculations
+ * Description: Math is hard, let us help.
  * Author: sortabrilliant
  * Author URI: https://sortabrilliant.com/twoplustwo
  * Version: 1.0.0
