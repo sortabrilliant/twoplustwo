@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function setup() {
 	add_action( 'rest_api_init', __NAMESPACE__ . '\\add_routes' );
+	add_action( 'admin_footer', __NAMESPACE__ . '\\localize_script' );
 }
 
 function add_routes() {
@@ -61,4 +62,12 @@ function get_settings( \WP_REST_Request $request ) {
 	return rest_ensure_response(
 		get_option( 'sortabrilliant_updater' )
 	);
+}
+
+function localize_script() {
+	?>
+	<script type="text/javascript">
+	var sortabrilliant_updater = <?php echo wp_json_encode( array( 'subscribed' => get_option( 'sortabrilliant_updater' ) ) ); ?>;
+	</script>
+	<?php
 }
