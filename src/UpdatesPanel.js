@@ -12,24 +12,11 @@ export default class UpdatesPanel extends Component {
         super(props);
 
         this.state = {
-            updaterActive: false,
+            updaterActive: sortabrilliant_updater.subscribed || false,
             isLoading: false,
         };
 
         this.activateUpdates = this.activateUpdates.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({ isLoading: true });
-
-        apiFetch({
-            path: '/sortabrilliant/v1/updater/settings'
-        }).then(data => {
-            this.setState({
-                isLoading: false,
-                updaterActive: (data.length > 0),
-            });
-        });
     }
 
     handleSubmit(event) {
@@ -46,7 +33,10 @@ export default class UpdatesPanel extends Component {
             data: {
                 'email_address': EMAIL,
             }
-        }).then(() => this.setState({ isLoading: false }));
+        }).then(() => {
+            this.setState({ isLoading: false });
+            sortabrilliant_updater.subscribed = EMAIL;
+        });
     }
 
     render() {
