@@ -81,7 +81,7 @@ function twoplustwo_sbb_block_categories( $categories ) {
 		array(
 			array(
 				'slug'  => 'financial_calculators',
-				'title' => __( 'Finance Calculators', 'twoplustwo' ),
+				'title' => __( 'Financial Calculators', 'twoplustwo' ),
 				'icon'  => 'wordpress',
 			),
 		)
